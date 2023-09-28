@@ -6,16 +6,24 @@ public class PascalTriangle {
 	// This method is used to display a Pascal triangle based on the parameter n.
 	// Where n represents the number of rows
 	public static void printPascalTriangle(int row) {
-		if (row == 0)
-			return;
-		// TODO
-		int[] rowArray = getPascalTriangle(row);
+		printPascalTriangleHelper(row, 1);
+	}
+	public static void printPascalTriangleHelper(int row, int starter) {
+		if (starter > row) return;
+		int[] rowArray = getPascalTriangle(starter);
 
-		printPascalTriangle(row - 1);
-		for (int i = 0; i < rowArray.length; i++) {
-			System.out.print(rowArray[i] + "  ");
+		//print spaces
+		for (int i = 0; i < row-starter; i++) {
+			System.out.print(" ");
 		}
+		
+		//print row
+		for (int i = 0; i < rowArray.length; i++) {
+			System.out.print(rowArray[i] + " ");
+		}
+		
 		System.out.println();
+		printPascalTriangleHelper(row, starter+1);
 	}
 
 	// get the nth row.
