@@ -38,9 +38,6 @@ public class TextFileUtils {
 			writer.close();
 		}
 		
-//		public static String fileToString(String fileName) throws IOException {
-//			return Files.readString(Paths.get(fileName));
-//		}
 
 		public static void main(String[] args) throws IOException {
 //			try {

@@ -159,8 +159,8 @@ public class MyCaesar {
 		System.out.println(myCaesar.decrypt("N fr Lwtty ns LTYL 6 7 8"));
 
 		// task 4
-//		myCaesar.encryptByUser();
-//		myCaesar.decryptByUser();
+		myCaesar.encryptByUser();
+		myCaesar.decryptByUser();
 		
 		//task 5
 		myCaesar.encryptFile("./data/Lab1.txt", "./data/desFile1.txt");

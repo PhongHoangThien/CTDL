@@ -73,7 +73,6 @@ public class MyArray {
 				}
 			}
 		}
-		
 		return result;
 	}
 	
@@ -81,10 +80,21 @@ public class MyArray {
 		int[] result = array.clone();
 		for (int i = 0; i < result.length-1; i++) {
 			if (array[i] > result[i+1]) {
-				result[i+1] = (result[i] + result[i+2] + result[i+3]) / k;
+				result[i+1] = searchValueToFill(result, i+1, k) / k;
 			}
 		}
 		
+		return result;
+	}
+	public int searchValueToFill(int[] arr, int index, int k) {
+		int result = 0;
+		int count = 0;
+		for (int j = Math.max(0, index - 1); j <= Math.min(index + k, arr.length - 1); j++) {
+            if (j != index && count < k) {
+                result += arr[j];
+                count++;
+            }
+		}
 		return result;
 	}
 	
