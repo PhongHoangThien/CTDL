@@ -28,7 +28,7 @@ public class OrderItem implements Comparable<OrderItem>{
 	}
 	
 	public String toString() {
-		return this.p.toString() + " : " + quality + "\n";
+		return this.p.toString() + " : " + this.quality + "\n";
 	}
 	
 }
