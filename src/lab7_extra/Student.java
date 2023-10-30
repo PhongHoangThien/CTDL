@@ -38,12 +38,7 @@ public class Student {
 	}
 	
 	public int compareGPA(Student that) {
-		if (this.GPA > that.GPA)
-		    return 1;
-		else if (this.GPA < that.GPA)
-			return -1;
-		
-		return 0;
+		return Double.compare(this.GPA, that.GPA);
 	}
 	
 	public String toString() {
