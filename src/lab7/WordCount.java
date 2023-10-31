@@ -1,44 +1,48 @@
 package lab7;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class WordCount {
-//	List<String> words = new ArrayList<String>();
-	private String uniqueToken;
-	private int numAppear = -1;
-	
-	
-	
-	public WordCount(String uniqueToken, int numAppear) {
-		super();
-		this.uniqueToken = uniqueToken;
-		this.numAppear = numAppear;
+	private String word;
+	private int count;
+
+	public WordCount(String word, int count) {
+		this.word = word;
+		this.count = count;
 	}
 
-	public void count() {
-		
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + word.hashCode();
+		result = prime * result + count;
+		return result;
 	}
-	
+
+	@Override
+	public boolean equals(Object obj) {
+//		System.out.println("called.");
+		if (obj == null || obj.getClass() != getClass())
+			return false;
+		else {
+			WordCount c = (WordCount) obj;
+			return this.word.equals(c.word);
+		}
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public String getWord() {
+		return word;
+	}
+
+	@Override
 	public String toString() {
-		return uniqueToken + ", " + numAppear + " times";
+		return this.word + "-" + this.count;
 	}
-
-	public String getUniqueToken() {
-		return uniqueToken;
-	}
-
-	public void setUniqueToken(String uniqueToken) {
-		this.uniqueToken = uniqueToken;
-	}
-
-	public int getNumAppear() {
-		return numAppear;
-	}
-
-	public void setNumAppear(int numAppear) {
-		this.numAppear = numAppear;
-	}
-	
-	
 }

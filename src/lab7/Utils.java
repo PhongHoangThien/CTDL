@@ -1,26 +1,20 @@
 package lab7;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Utils {
-	public static List<String> loadWord(String fileName) throws IOException {
-		List<String> result = new ArrayList<String>();
-		BufferedReader reader = new BufferedReader(new FileReader(fileName));
-		String line = null;
-		while (true) {
-			line = reader.readLine();
-			if (line == null)
-				break;
-			StringTokenizer tokens = new StringTokenizer(line, " ");
-			String str = tokens.nextToken();
-			result.add(str);
+	public static List<String> loadWords(String fileName) throws FileNotFoundException {
+		List<String> re = new ArrayList<String>();
+		Scanner input = new Scanner(new File(fileName));
+
+		while (input.hasNext()) {
+			String word = input.next();
+			re.add(word);
 		}
-		reader.close();
-		return result;
+		return re;
 	}
 }
