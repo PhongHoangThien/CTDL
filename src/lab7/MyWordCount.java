@@ -136,6 +136,7 @@ public class MyWordCount {
 				for (int i = 1; i < Math.min(str.getWord().length(), pattern.length()); i++) {
 					if (str.getWord().charAt(i) != pattern.charAt(i)) {
 							result.add(str);
+							break;
 					}
 				}
 			}
