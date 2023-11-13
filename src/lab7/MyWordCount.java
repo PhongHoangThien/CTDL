@@ -135,8 +135,8 @@ public class MyWordCount {
 				// nên chạy for từ index 0 --> min(2 length)
 				for (int i = 1; i < Math.min(str.getWord().length(), pattern.length()); i++) {
 					if (str.getWord().charAt(i) != pattern.charAt(i)) {
-							result.add(str);
-							break;
+						result.add(str);
+						break;
 					}
 				}
 			}
